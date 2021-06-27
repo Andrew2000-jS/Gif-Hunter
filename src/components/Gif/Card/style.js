@@ -3,12 +3,15 @@ import styled from '@emotion/styled'
 export const GifCard = styled.div`
   position: relative;
   display: inline-block;
+  margin: 0 auto;
+  cursor: pointer;
 `
 
 export const Img = styled.img`
   height: 250px;
   width: 250px;
   object-fit: cover;
+  border-radius: 5px;
 `
 
 export const Title = styled.p`

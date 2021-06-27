@@ -1,11 +1,15 @@
-import React from 'react'
-import Gif from '../../components/Gif/List'
+import React, {useState} from 'react'
+import {Container} from './styles'
+import SearchBar from 'components/SearchBar'
 
 export default function Home() {
+  const [keyword, setKeyword] = useState('')
+  const handleChange = (e) => setKeyword(e.target.value)
+
   return (
-    <div>
-      <h1 style={{fontFamily: 'Roboto'}}>Gif Hunter</h1>
-      <Gif keyword='goku' />
-    </div>
+    <Container>
+      <h1>Gif Hunter</h1>
+      <SearchBar handleChange={handleChange} keyword={keyword} />
+    </Container>
   )
 }

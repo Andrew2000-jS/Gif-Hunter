@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
+import {useHistory} from 'react-router-dom'
+import {SearchInput, Form} from './styles'
 
-export default function SeatchBar() {
-  const [keyword, setKeyword] = useState('')
+export default function SearchBar({handleChange, keyword}) {
+  const history = useHistory()
 
-  const handleChange = (e) => setKeyword(e.target.value)
+  const onSubmit = (e) => {
+    e.preventDefault()
+
+    history.push(`/search/${keyword}`)
+  }
   return (
-    <div>
-      <input type='text' onChange={handleChange} value={keyword} />
-    </div>
+    <Form onSubmit={onSubmit}>
+      <SearchInput type='text' onChange={handleChange} value={keyword} />
+      <button>Submit</button>
+    </Form>
   )
 }
