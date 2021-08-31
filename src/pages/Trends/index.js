@@ -1,5 +1,6 @@
 import React from 'react'
 
+import SEO from 'components/SEO'
 import List from 'components/Gif/List'
 import useTrends from 'hooks/useTrends'
 
@@ -9,9 +10,12 @@ export default function Trends() {
   const {trends} = useTrends()
 
   return (
-    <Container>
-      <H3>Trends</H3>
-      <List gifs={trends} />
-    </Container>
+    <>
+      <SEO title='Trends | Gif Hunter' name='Trendings page' content='trends' />
+      <Container>
+        <H3>Trends</H3>
+        <List gifs={trends} />
+      </Container>
+    </>
   )
 }

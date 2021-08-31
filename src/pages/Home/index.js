@@ -1,5 +1,6 @@
 import React, {useRef} from 'react'
 
+import SEO from 'components/SEO'
 import SearchBar from 'components/SearchBar'
 import Trends from 'components/Trend'
 import List from 'components/Gif/List'
@@ -20,22 +21,25 @@ export default function Home() {
   const {keywordToUse, handleKeyword} = useKeyword(inputRef)
 
   return (
-    <Container>
-      <SearchBar
-        handleChange={handleKeyword}
-        keyword={keywordToUse}
-        inputRef={inputRef}
-      />
+    <>
+      <SEO title='Home | Gif Hunter' name='home' content='home page' />
+      <Container>
+        <SearchBar
+          handleChange={handleKeyword}
+          keyword={keywordToUse}
+          inputRef={inputRef}
+        />
 
-      <TrendsContainer>
-        <LinkTrend to='/trends'>Trending</LinkTrend>
-        <Trends />
-      </TrendsContainer>
+        <TrendsContainer>
+          <LinkTrend to='/trends'>Trending</LinkTrend>
+          <Trends />
+        </TrendsContainer>
 
-      <ListContainer>
-        <H4>Last search</H4>
-        <List gifs={gifs} />
-      </ListContainer>
-    </Container>
+        <ListContainer>
+          <H4>Last search</H4>
+          <List gifs={gifs} />
+        </ListContainer>
+      </Container>
+    </>
   )
 }
