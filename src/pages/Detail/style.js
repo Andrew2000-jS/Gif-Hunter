@@ -66,7 +66,7 @@ export const CardContainer = styled.div`
 
   ${ImgCard}:hover {
     box-shadow: 0 5px 200px rgba(201, 201, 201, 1);
-    height: 320px;
+    height: 380px;
   }
 `
 
@@ -88,6 +88,12 @@ export const Capa = styled.div`
   visibility: hidden;
   color: #fff;
 `
+
+export const SubCapa = styled.div`
+  margin: 2% 0 0 2%;
+  font-size: 0.8rem;
+`
+
 export const Figure = styled.figure`
   position: relative;
   height: auto;

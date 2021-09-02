@@ -1,18 +1,22 @@
-import React, {useCallback} from 'react'
+import React, {useCallback, useRef} from 'react'
+
 import {useHistory} from 'react-router-dom'
 import {SearchInput, Form, Logo} from './styles'
 import logo from 'assets/logo_transparent.png'
+import useKeyword from 'hooks/useKeyword'
 
-export default function SearchBar({handleChange, keyword, inputRef}) {
+function SearchBar() {
+  const inputRef = useRef(null)
+  const {keywordToUse, handleKeyword} = useKeyword(inputRef)
+
   const history = useHistory()
 
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault()
-
-      history.push(`/search/${keyword}`)
+      history.push(`/search/${keywordToUse}`)
     },
-    [history, keyword],
+    [history, keywordToUse],
   )
 
   return (
@@ -20,10 +24,12 @@ export default function SearchBar({handleChange, keyword, inputRef}) {
       <Logo src={logo} />
       <SearchInput
         type='text'
-        onChange={handleChange}
-        value={keyword}
+        onChange={handleKeyword}
+        value={keywordToUse}
         ref={inputRef}
       />
     </Form>
   )
 }
+
+export default React.memo(SearchBar)

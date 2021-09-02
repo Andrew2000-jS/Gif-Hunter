@@ -2,7 +2,7 @@ import React from 'react'
 import Card from '../Card'
 import {Container} from './style'
 
-export default function List({gifs = []}) {
+function List({gifs = []}) {
   return (
     <Container>
       {gifs.map((collectionGifs) => {
@@ -12,3 +12,5 @@ export default function List({gifs = []}) {
     </Container>
   )
 }
+
+export default React.memo(List)

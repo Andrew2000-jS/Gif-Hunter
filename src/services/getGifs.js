@@ -1,6 +1,6 @@
 import {BASE_URL, SDK} from './settings'
 
-export const getGifs = async ({keyword, limit = 10, page}) => {
+export const getGifs = async ({keyword, limit = 10, page = 0}) => {
   const request = await fetch(
     `${BASE_URL}search?api_key=${SDK}&q=${keyword}&limit=${limit}&offset=${
       page * limit

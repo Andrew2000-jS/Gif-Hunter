@@ -15,6 +15,7 @@ import {
   Figure,
   Capa,
   ImgGif,
+  SubCapa,
 } from './style'
 import SEO from 'components/SEO'
 
@@ -32,11 +33,11 @@ export default function Detail({match}) {
             <Figure>
               <ImgGif src={oneGif.image} alt={oneGif.title} />
               <Capa>
-                <div style={{margin: '2% 0 0 2%', fontSize: '0.8rem'}}>
+                <SubCapa>
                   <p>Uploaded: {oneGif.date}</p>
                   <p>Id: {id}</p>
                   <p>Rating: {oneGif.rating}</p>
-                </div>
+                </SubCapa>
               </Capa>
             </Figure>
           </CardGif>

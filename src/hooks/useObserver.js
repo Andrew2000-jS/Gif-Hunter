@@ -1,7 +1,6 @@
 import {useEffect, useRef, useState} from 'react'
 
 export default function useObserver(options) {
-  console.log(options)
   const refToUse = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 

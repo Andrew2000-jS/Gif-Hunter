@@ -1,19 +1,18 @@
 import {useState, useEffect} from 'react'
 import {getGifs} from 'services/getGifs'
 
-export default function useGifs(keyword) {
+export default function useGifs(keyword = null) {
   const [gifs, setGifs] = useState([])
   const [loading, setLoading] = useState(false)
 
   const [page, setPage] = useState(0)
   const [loadingPage, setLoadingPage] = useState(false)
 
-  const lastKeyword = !keyword
-    ? window.localStorage.getItem('keyword')
-    : keyword
+  const lastKeyword = keyword || window.localStorage.getItem('keyword')
 
   useEffect(() => {
     setLoading(true)
+
     getGifs({keyword: lastKeyword}).then((allGifs) => {
       setGifs(allGifs)
       setLoading(false)
