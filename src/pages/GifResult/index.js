@@ -12,7 +12,7 @@ import {Container, HeadContent, H3, ListContent} from './style'
 import debounce from 'just-debounce-it'
 
 export default function GifResult({match}) {
-  const {keyword} = match.params
+  const {keyword} = match?.params
   const inputRef = useRef(null)
 
   const {gifs, loading, setPage} = useGifs(keyword)

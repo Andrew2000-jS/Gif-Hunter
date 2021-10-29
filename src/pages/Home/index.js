@@ -24,7 +24,9 @@ export default function Home() {
         <SearchBar />
 
         <TrendsContainer>
-          <LinkTrend to='/trends'>Trending</LinkTrend>
+          <LinkTrend to='/trends' role='a'>
+            Trending
+          </LinkTrend>
           <Trends />
         </TrendsContainer>
 

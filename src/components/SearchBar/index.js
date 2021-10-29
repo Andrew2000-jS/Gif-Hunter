@@ -20,7 +20,7 @@ function SearchBar() {
   )
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} role='form'>
       <Logo src={logo} />
       <SearchInput
         type='text'
