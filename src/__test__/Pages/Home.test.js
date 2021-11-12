@@ -10,7 +10,7 @@ describe('<Home />', () => {
       </Router>,
     )
   })
-  test('Home performs properly', () => {
+  test('performs properly', () => {
     const title = screen.getByText(/Trending/i)
     expect(title).toBeInTheDocument()
   })

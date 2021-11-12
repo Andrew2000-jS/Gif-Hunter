@@ -20,7 +20,7 @@ import {
 import SEO from 'components/SEO'
 
 export default function Detail({match}) {
-  const {id} = match.params
+  const {id} = match?.params
   const {oneGif} = useOneGif(id)
 
   return (
@@ -29,7 +29,9 @@ export default function Detail({match}) {
       <Container>
         <Content>
           <CardGif>
-            <h5 style={{color: '#ddd'}}>{oneGif.title}</h5>
+            <h5 style={{color: '#ddd'}} id='title'>
+              {oneGif?.title}
+            </h5>
             <Figure>
               <ImgGif src={oneGif.image} alt={oneGif.title} />
               <Capa>
