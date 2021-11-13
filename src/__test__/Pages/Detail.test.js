@@ -26,9 +26,7 @@ describe('<Detail />', () => {
   })
 
   test('useOneGif is render an []', async () => {
-    const {result} = await renderHook(
-      () => useOneGif().oneGif,
-    )
+    const {result} = await renderHook(() => useOneGif().oneGif)
     await act(async () => {
       await result.current.oneGif
     })
